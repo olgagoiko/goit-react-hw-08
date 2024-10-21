@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import Layout from '../components/Layout/Layout';
 import PrivateRoute from './PrivateRoute';
-import RestrictedRoute from './RestrictedRoute';
+import RestrictedRoute from './RegistrationForm/RegistrationForm';
 import { refreshUser } from '../redux/auth/operations';
 import { selectIsRefreshing } from '../redux/auth/selectors';
 

@@ -6,7 +6,7 @@
 }
 
 .input {
-  width: 300px;
+  width: 290px;
   height: 26px;
   border: 2px solid rgb(128, 128, 128);
   transition: border-color 250ms linear;

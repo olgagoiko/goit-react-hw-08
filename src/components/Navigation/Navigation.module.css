@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  height: 30px;
+  padding: 12px;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  transition: color 250ms linear;
+}
+
+.link:hover,
+.link:focus {
+  color: rgb(110, 141, 116);
+}
+
+.active {
+  color: rgb(110, 141, 116);
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .link {
+    font-size: 18px;
+  }
+}
