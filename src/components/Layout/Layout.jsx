@@ -1,21 +1,15 @@
-import { ThreeDots } from 'react-loader-spinner'
+import { Suspense } from 'react';
+import AppBar from '../AppBar/AppBar';
+import Loader from '../Loader/Loader';
+import css from './Layout.module.css';
 
-
-export default function Loader() {
-
-    
-    return (
-    <div >
-<ThreeDots
-  visible={true}
-  height="80"
-  width="80"
-  color="#4fa94d"
-  radius="9"
-  ariaLabel="three-dots-loading"
-  wrapperStyle={{}}
-  wrapperClass=""
-  />
+const Layout = ({ children }) => {
+  return (
+    <div className={css.container}>
+      <AppBar />
+      <Suspense fallback={<Loader />}>{children}</Suspense>
     </div>
   );
-}
+};
+
+export default Layout;

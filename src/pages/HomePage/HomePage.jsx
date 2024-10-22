@@ -8,9 +8,9 @@ const HomePage = () => {
 
       <div className={css.container}>
         <h1 className={css.title}>
-          <span>Phonebook</span> welcome page
+          <span>Phonebook</span> Welcome
           <span role="img" aria-label="Greeting icon">
-            💁‍♀️
+            🖐️
           </span>
         </h1>
       </div>

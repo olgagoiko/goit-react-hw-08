@@ -1,17 +1,25 @@
 .container {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
+  height: 100vh;
+  max-width: 1440px;
+  background-image: url('src/assets/8481.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .title {
   font-weight: 500;
   font-size: 24px;
-  text-align: center;
+  /* text-align: center; */
+  color: black;
+  font-style: oblique;
 }
 
 .title > span {
-  color: rgb(110, 141, 116);
+  color: rgb(119, 185, 132);
 }
 
 @media screen and (min-width: 768px) {
