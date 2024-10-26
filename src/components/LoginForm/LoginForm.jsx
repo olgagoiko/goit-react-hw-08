@@ -1,33 +1,33 @@
-import { useDispatch } from "react-redux";
-import { useId } from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
-import { logIn } from "../../redux/auth/operations";
-import css from "./LoginForm.module.css";
+import { useDispatch } from 'react-redux';
+import { useId } from 'react';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import { logIn } from '../../redux/auth/operations';
+import css from './LoginForm.module.css';
 
 const validationSchema = Yup.object().shape({
-  email: Yup.string().email("Invalid email").required("Required!"),
+  email: Yup.string().email('Invalid email').required('Required!'),
   password: Yup.string()
-    .min(6, "The password must contain at least 6 characters")
-    .matches(/[A-Z]/, "The password must contain at least one capital letter.")
-    .matches(/[a-z]/, "The password must contain at least one lowercase letter")
-    .matches(/[0-9]/, "The password must contain at least one number")
-    .required("Required!"),
+    .min(6, 'The password must contain at least 6 characters')
+    .matches(/[A-Z]/, 'The password must contain at least one capital letter.')
+    .matches(/[a-z]/, 'The password must contain at least one lowercase letter')
+    .matches(/[0-9]/, 'The password must contain at least one number')
+    .required('Required!'),
 });
 
-export default function LoginForm () {
+export default function LoginForm() {
   const dispatch = useDispatch();
   const userEmail = useId();
   const userPassword = useId();
 
-    const handleSubmit = (values, actions) => {
+  const handleSubmit = (values, actions) => {
     dispatch(logIn(values));
     actions.resetForm();
   };
 
   return (
     <Formik
-      initialValues={{ email: "", password: "" }}
+      initialValues={{ email: '', password: '' }}
       onSubmit={handleSubmit}
       validationSchema={validationSchema}
     >
@@ -40,11 +40,7 @@ export default function LoginForm () {
             id={userEmail}
             className={css.input}
           />
-          <ErrorMessage
-            className={css.error}
-            name="email"
-            component="span"
-          />
+          <ErrorMessage className={css.error} name="email" component="span" />
         </div>
         <div className={css.wrap}>
           <label htmlFor={userPassword}>Password</label>
@@ -66,4 +62,4 @@ export default function LoginForm () {
       </Form>
     </Formik>
   );
-};
+}
